@@ -1,5 +1,5 @@
 clc
-[x,FS]=audioread("noisy_tlou.wav");%get the signal with frequency of FS and x
+[x,FS]=audioread("Sample Inputs/noisy_tlou.wav");%get the signal with frequency of FS and x
 fourier=fft(x);
 output=removeNoise(fourier);
 t=1:1:2252004;
@@ -10,9 +10,9 @@ subplot(2,1,2)
 plot(t,output,LineWidth=2)
 title("clean")
 output = ifft(output);
-audiowrite('clean.wav',real(output),FS);
-audiowrite('fast.wav',real(output),FS*2);%only multiple frequency by 2 for make voice fast
-audiowrite('slow.wav',real(output),FS/2);%only divide frequency by 2 for make voice slow
+audiowrite('Outputs/clean.wav',real(output),FS);
+audiowrite('Outputs/fast.wav',real(output),FS*2);%only multiple frequency by 2 for make voice fast
+audiowrite('Outputs/slow.wav',real(output),FS/2);%only divide frequency by 2 for make voice slow
 
 %this function cleans high frequencies in the range as shown in function
 function [out]=removeNoise(Voice)
