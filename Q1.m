@@ -8,7 +8,7 @@ plot(t,x)
 title("noisy tlou")
 subplot(6,1,2)
 spectrogram(x);
-title("spectogram of noisy tlou")
+title("spectrogram of noisy tlou")
 subplot(6,1,3)
 plot(t,fourier,LineWidth=2)
 title("frequency domain with Noise")
@@ -22,7 +22,7 @@ plot(t,output);
 title("noisy tlou without Noise")
 subplot(6,1,6)
 spectrogram(output);
-title("clean voice Spectogram")
+title("clean voice Spectrogram")
 audiowrite('Outputs/clean.wav',real(output),FS);
 audiowrite('Outputs/fast.wav',real(output),FS*2);%only multiple frequency by 2 for make voice fast
 audiowrite('Outputs/slow.wav',real(output),FS/2);%only divide frequency by 2 for make voice slow
